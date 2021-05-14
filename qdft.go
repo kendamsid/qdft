@@ -20,6 +20,8 @@ func transfer(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/octet-stream")
 	
 	io.Copy(w, res)
+	
+	log.Print("Grabbed from ", r.RemoteAddr)
 }
 
 func main() {
