@@ -26,7 +26,7 @@ func transfer(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	if len(os.Args) != 2 {
-		log.Fatal("No arguments.")
+		log.Fatal("Invalid argument (format: qdft <filename>)")
 		os.Exit(1)
 	}
 
