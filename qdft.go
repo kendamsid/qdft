@@ -38,5 +38,6 @@ func main() {
 
 	http.HandleFunc("/", transfer)
 	
+	log.Print("Listening at port 369")
 	log.Fatal(http.ListenAndServe(":369", nil))
 }
