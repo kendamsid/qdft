@@ -9,13 +9,14 @@ import (
 )
 
 func transfer(w http.ResponseWriter, r *http.Request) {
-	res, err := os.Open(os.Arg[1])
+	res, err := os.Open(os.Args[1])
 	if err != nil {
-		return 0, err
+		// fix this
+		os.Exit(2)
 	}
 	defer res.Close()
 	
-	w.Header().Set("Content-Disposition", "attachment; filename="+strconv.Quote(os.args[1]));
+	w.Header().Set("Content-Disposition", "attachment; filename="+strconv.Quote(os.Args[1]));
 	w.Header().Set("Content-Type", "application/octet-stream")
 	
 	io.Copy(w, res)
